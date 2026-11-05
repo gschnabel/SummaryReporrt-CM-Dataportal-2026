@@ -1,0 +1,166 @@
+{
+  "event_url": "https://conferences.iaea.org/event/498/",
+  "snapshot_date": "2026-10-28",
+  "start": "2026-10-27",
+  "end": "2026-10-30",
+  "location": "Vienna International Centre, M0E13",
+  "contributions": [
+    {
+      "file": "Opening.tex",
+      "id": 43607,
+      "url": "https://conferences.iaea.org/event/498/contributions/43607/",
+      "date": "2026-10-27",
+      "title": "Opening remarks and administrative matters",
+      "authors_or_speakers": "Arjan Koning",
+      "affiliation": "IAEA",
+      "abstract_available": false,
+      "discussion_status": "draft",
+      "reported_introduction_by": "Shin Okumura",
+      "attribution_note": "Programme lists Arjan Koning; introductory role described in prepared opening remarks and Webex summary. See source-notes.md."
+    },
+    {
+      "file": "Okumura-1.tex",
+      "id": 43608,
+      "url": "https://conferences.iaea.org/event/498/contributions/43608/",
+      "date": "2026-10-27",
+      "title": "Nuclear Data Retrieval, Dissemination, and Data Portals",
+      "authors_or_speakers": "Shin Okumura",
+      "affiliation": "IAEA",
+      "abstract_available": true,
+      "discussion_status": "draft"
+    },
+    {
+      "file": "Okumura-2.tex",
+      "id": 43620,
+      "url": "https://conferences.iaea.org/event/498/contributions/43620/",
+      "date": "2026-10-27",
+      "title": "Updates on IAEA Nuclear Reaction DataExplorer Developments",
+      "authors_or_speakers": "Shin Okumura",
+      "affiliation": "IAEA",
+      "abstract_available": false,
+      "discussion_status": "draft"
+    },
+    {
+      "file": "Sprenger.tex",
+      "id": 43621,
+      "url": "https://conferences.iaea.org/event/498/contributions/43621/",
+      "date": "2026-10-27",
+      "title": "Strengthening Collaboration and Reproducibility in the Nuclear Data Community: Challenges and NEA Initiatives",
+      "authors_or_speakers": "Julia Sprenger",
+      "affiliation": "OECD/NEA",
+      "abstract_available": false,
+      "discussion_status": "draft"
+    },
+    {
+      "file": "Georgiadou.tex",
+      "id": 43613,
+      "url": "https://conferences.iaea.org/event/498/contributions/43613/",
+      "date": "2026-10-27",
+      "title": "EXFOR Streamlined Reaction Data Submission",
+      "authors_or_speakers": "Anastasia Georgiadou and Julia Sprenger",
+      "affiliation": "OECD/NEA",
+      "abstract_available": true,
+      "discussion_status": "draft"
+    },
+    {
+      "file": "Koning.tex",
+      "id": 43618,
+      "url": "https://conferences.iaea.org/event/498/contributions/43618/",
+      "date": "2026-10-27",
+      "title": "Autotalys nuclear data pipeline with GitHub, ChatGPT and Codex",
+      "authors_or_speakers": "Arjan Koning",
+      "affiliation": "IAEA",
+      "abstract_available": false,
+      "discussion_status": "draft"
+    },
+    {
+      "file": "Martinez.tex",
+      "id": 43617,
+      "url": "https://conferences.iaea.org/event/498/contributions/43617/",
+      "date": "2026-10-27",
+      "title": "Progress in the Development of the New Nuclear Data Retrieval System",
+      "authors_or_speakers": "Alejandra Martinez",
+      "affiliation": "",
+      "abstract_available": true,
+      "discussion_status": "draft"
+    },
+    {
+      "file": "Schnabel.tex",
+      "id": 43619,
+      "url": "https://conferences.iaea.org/event/498/contributions/43619/",
+      "date": "2026-10-28",
+      "title": "endf-parserpy and endf-userpy",
+      "authors_or_speakers": "Georg Schnabel",
+      "affiliation": "IAEA",
+      "abstract_available": false,
+      "discussion_status": "draft"
+    },
+    {
+      "file": "Mason.tex",
+      "id": 43627,
+      "url": "https://conferences.iaea.org/event/498/contributions/43627/",
+      "date": "2026-10-28",
+      "title": "Modernizing ENSDF with REST APIs and Physics-Informed AI",
+      "authors_or_speakers": "Donnie Mason",
+      "affiliation": "BNL",
+      "abstract_available": true,
+      "discussion_status": "draft"
+    },
+    {
+      "file": "Katsura.tex",
+      "id": 43632,
+      "url": "https://conferences.iaea.org/event/498/contributions/43632/",
+      "date": "2026-10-28",
+      "title": "Starrydata",
+      "authors_or_speakers": "Yukari Katsura",
+      "affiliation": "NIMS",
+      "abstract_available": false,
+      "discussion_status": "draft"
+    },
+    {
+      "file": "Avramovski-1.tex",
+      "id": 43622,
+      "url": "https://conferences.iaea.org/event/498/contributions/43622/",
+      "date": "2026-10-29",
+      "title": "Towards Agentic Nuclear Data: AI/ML in the Nuclear Decay Data and Fusion Data Pipeline",
+      "authors_or_speakers": "Dragan Avramovski",
+      "affiliation": "IAEA",
+      "abstract_available": false,
+      "discussion_status": "pending"
+    },
+    {
+      "file": "Avramovski-2.tex",
+      "id": 43623,
+      "url": "https://conferences.iaea.org/event/498/contributions/43623/",
+      "date": "2026-10-29",
+      "title": "Agentic AI Engineering with Local Models",
+      "authors_or_speakers": "Dragan Avramovski",
+      "affiliation": "IAEA",
+      "abstract_available": false,
+      "discussion_status": "pending"
+    },
+    {
+      "file": "Okumura-3.tex",
+      "id": 43631,
+      "url": "https://conferences.iaea.org/event/498/contributions/43631/",
+      "date": "2026-10-29",
+      "title": "An attempt to automate nuclear physics literature screening with ML and Local LLMs",
+      "authors_or_speakers": "Shin Okumura",
+      "affiliation": "IAEA",
+      "abstract_available": false,
+      "discussion_status": "pending"
+    }
+  ],
+  "webex_sources": [
+    {
+      "file": "Webex-Summary/day1.pdf",
+      "meeting_date": "2026-10-28",
+      "sha256": "90b21596b95476f7eeecda6a7203b9e9dd9050c00bb1b3c66608b56d6cd5fe39"
+    },
+    {
+      "file": "Webex-Summary/day2.pdf",
+      "meeting_date": "2026-10-27",
+      "sha256": "67c5ae373b6affa05e291a448d0ce12aaa6114a981e5063e2e622ce7d6bfa628"
+    }
+  ]
+}
