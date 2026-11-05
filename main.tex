@@ -1,0 +1,95 @@
+\documentclass{indc-report}
+\setlength{\headheight}{15pt}
+
+% Publication number, DOI and preparers have not been confirmed.
+\newcommand{\reportnumber}{INDC-NDS-xxxx}
+\newcommand{\reportdistribution}{Draft}
+\newcommand{\reportdoi}{}
+\newcommand{\reportdate}{30 October 2026}
+\newcommand{\reportpreparer}{
+                            Dragan Avramovski, Arjan Koning, Alejandra Martinez, Shin Okumura, Georg Schnabel\\
+                            IAEA Nuclear Data Section\\
+                            ~\\
+                            Anastasia Georgiadou, Julia Sprenger\\
+                            OECD/NEA Data Bank\\
+                            ~\\
+                            Yukari Katsura\\
+                            National Institute for Materials Science, Japan\\
+                            ~\\
+                            Donnie Mason\\
+                            Brookhaven National Laboratory, USA\\
+                            }
+
+\newcommand{\meetingdate}{27--30 October 2026}
+\newcommand{\meetinglocation}{IAEA Headquarters, Vienna, Austria}
+\newcommand{\meetingplace}{Room M0E13}
+\newcommand{\meetingtype}{Consultancy Meeting}
+\newcommand{\meetingsubject}{Follow-up Developments in Nuclear Data Retrieval, Dissemination, and Data Portal}
+\title{Summary Report of the \meetingtype\ on \meetingsubject}
+
+\begin{document}
+\input{frontmatter.tex}
+
+\section{Introduction}
+\input{1-introduction/introduction.tex}
+\newpage
+
+\section{Presentation summaries}
+
+\subsection{Tuesday, 27 October 2026}
+
+\subsubsection{Nuclear Data Retrieval, Dissemination, and Data Portals\\ Shin Okumura (IAEA)}
+\input{2-presentations/Okumura-1.tex}
+
+\subsubsection{Updates on IAEA Nuclear Reaction DataExplorer Developments\\ Shin Okumura (IAEA)}\label{Pres:SO2} 
+\input{2-presentations/Okumura-2.tex}
+
+\subsubsection{Strengthening Collaboration and Reproducibility in the Nuclear Data Community: Challenges and NEA Initiatives\\ Julia Sprenger (OECD/NEA)}
+\input{2-presentations/Sprenger.tex}
+
+\subsubsection{EXFOR Streamlined Reaction Data Submission\\ Anastasia Georgiadou and Julia Sprenger (OECD/NEA)}\label{subsec:EXFOR_Streamlined}
+\input{2-presentations/Georgiadou.tex}
+
+\subsubsection{Autotalys nuclear data pipeline with GitHub, ChatGPT and Codex\\ Arjan Koning (IAEA)}
+\input{2-presentations/Koning.tex}
+
+\subsubsection{Progress in the Development of the New Nuclear Data Retrieval System\\ Alejandra Martinez (IAEA)}
+\input{2-presentations/Martinez.tex}
+
+\subsection{Wednesday, 28 October 2026}
+
+\subsubsection{ENDF modernization efforts: endf-parserpy and endf-userpy\\ Georg Schnabel (IAEA)}
+\input{2-presentations/Schnabel.tex}
+
+\subsubsection{Modernizing ENSDF with REST APIs and Physics-Informed AI\\ Donnie Mason (BNL)}
+\input{2-presentations/Mason.tex}
+
+\subsubsection{Starrydata\\ Yukari Katsura (NIMS)}
+\input{2-presentations/Katsura.tex}
+
+\subsection{Thursday, 29 October 2026 (scheduled)}
+
+\subsubsection{Towards Agentic Nuclear Data: AI/ML in the Nuclear Decay Data and Fusion Data Pipeline\\ Dragan Avramovski (IAEA)}
+\input{2-presentations/Avramovski-1.tex}
+
+\subsubsection{Agentic AI Engineering with Local Models\\ Dragan Avramovski (IAEA)}
+\input{2-presentations/Avramovski-2.tex}
+
+\newpage
+\section{Summary of discussions and recommendations}
+\input{3-summary/summary.tex}
+\newpage
+
+\section*{Declaration of generative AI use}
+\addcontentsline{toc}{section}{Declaration of generative AI use}
+\input{1-introduction/ai-disclaimer.tex}
+\newpage
+
+\phantomsection
+\addcontentsline{toc}{section}{References}
+\bibliographystyle{unsrt2authabbrvpp}
+\bibliography{reference}
+\newpage
+
+\input{backmatter.tex}
+\end{document}

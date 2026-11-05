@@ -1,0 +1,83 @@
+% Official contribution: https://conferences.iaea.org/event/498/contributions/43618/
+\paragraph{Abstract}
+The AutoTALYS~\cite{autotalys} pipeline presented here aims to bring experimental nuclear reaction 
+measurements from EXFOR~\cite{EXFOR} and theoretical calculations from TALYS~\cite{Koning2023TALYS} into a common workflow. 
+It supports the production of TENDL~\cite{TENDL} and related evaluated libraries, optimization of nuclear model parameters, 
+astrophysical cross sections and reaction rates, medical isotope data, and the calculation of uncertainties, 
+covariance matrices, and sensitivity profiles. 
+This presentation describes how a Git based collection of codes and databases can make those activities easier to 
+install, reproduce, inspect, and extend. It also examines the role of ChatGPT and Codex in developing software for 
+the pipeline, while keeping scientific choices and review with the nuclear data specialist.
+
+AutoTALYS is assembled from repositories with distinct functions. 
+TALYS calculates nuclear reactions; TEFAL~\cite{tefal} converts results into ENDF-6~\cite{ENDF6FormatsManual2023} evaluations; 
+TASMAN handles optimization, sensitivity, covariance, and Total Monte Carlo calculations. 
+Supporting codes address isotope production, normalization, and ENDF-6 validation and processing. 
+Other repositories hold experimental tables, resonance information, fission data, and specialized cross-section libraries. 
+Installation scripts and a central workflow driver connect these components. 
+The Git based structure provides a practical way to obtain the system and trace changes in its codes and inputs. 
+For a data portal, this structure matters because a displayed value is more useful when its underlying measurement, 
+calculation, transformation, and evaluation can be found and examined.
+
+The EXFOR workflow illustrates that connection. An EXFOR JSON parser~\cite{EXFORParser} supplies entries, reactions, measurements, 
+and metadata. Conversion software normalizes the measurements into tables and organizes them by projectile, nuclide, 
+category, reaction, and dataset. Evaluator annotations from a separate outlier repository are matched to the 
+experimental records. This produces a directory structured database that retains measured points alongside 
+their metadata and subjective quality assessments. The outlier repository contains more than 20,000 files, 
+representing a substantial body of manual review. Preserving these annotations with the numerical data allows 
+later analyses to use expert judgment without obscuring where that judgment came from.
+
+Automated analysis adds another layer of evidence. A Codex generated quality score considers data integrity, 
+reported uncertainties, consistency with peer experiments, provenance, and metadata; 
+eligible total cross sections may also be compared with evaluated libraries. 
+The score starts at 0.50, applies specified rewards and penalties, and is bounded between zero and one. 
+A higher value indicates stronger evidence under these rules, rather than proof that a dataset is correct. 
+The presentation notes a current limitation: uncertainties below 0.1\% are not flagged as implausibly small 
+by the scoring rule. A separate outlier comparison examines peer experiments and library curves against 
+manual outlier judgments. It does not take the Codex quality score as an input. Keeping the automated score, 
+comparison result, and evaluator annotation distinct makes disagreements visible and gives reviewers a clearer 
+basis for investigation.
+
+The same approach extends to low energy neutron data through the resonancetables repository~\cite{resonancetables}. Its purpose is to 
+gather existing compilations and evaluations of thermal cross sections, Maxwellian averaged cross sections, 
+resonance integrals, average resonance parameters, and individual resonance parameters. 
+The material draws on EXFOR, established atlases and compilations, and major evaluated libraries, 
+including ENDF/B-VIII.1~\cite{ENDFB8.1}, JEFF-4.0~\cite{JEFF40}, JENDL-5.0~\cite{Iwamoto2023JENDL5}, and TENDL-2025~\cite{TENDL}. 
+The immediate task is a compilation of those sources; an evaluation across the collected compilations remains 
+a further step. Bringing them together should make both automated and manual evaluation more efficient by 
+exposing differences among sources and reducing repeated data gathering. 
+An example for the thermal capture cross section of osmium-190 shows how EXFOR parsing can support this comparison.
+
+Quality assessment also has a broader, library-wide dimension. The presentation reports a horizontal comparison 
+using an Frms measure for several evaluated libraries, with values close to unity: 
+1.034 for CENDL-3.2, 1.020 for JENDL-5.0, 1.021 for ENDF/B-VIII.1, 1.011 for TENDL-2025, 1.024 for JEFF-3.3, and 
+1.015 for JEFF-4.0. Such summary measures help identify overall agreement with selected experimental data, 
+but their interpretation depends on dataset selection, quality decisions, and the reactions included. 
+The workflow therefore retains dataset level statistics and provenance rather than relying on a single aggregate number. 
+Examples of plotted cross sections and detailed dataset records demonstrate how numerical comparisons can lead 
+back to individual measurements and their evaluation context.
+
+Model adjustment provides the next connection between retrieval and production. 
+TASMAN~\cite{tasman} already automates TALYS parameter optimization, and the pipeline has generated covariance data and linear 
+sensitivity coefficients across nuclides. The proposed development is to optimize TALYS against all relevant reaction 
+channels with curated EXFOR data at once, concentrating on approximately twenty of the most sensitive parameters. 
+The presentation also proposes adding a non-model evaluation above the resonance range, with TENDL-2027 as the target. 
+These are planned capabilities, distinct from the functions already demonstrated. Their success will depend on the 
+quality and coverage of the experimental inputs, defensible treatment of uncertainty, and careful review of 
+conflicts among reaction channels.
+
+The central lesson for nuclear data dissemination is that a portal can serve as an entry point to a traceable evaluation 
+process. Git based installation, structured experimental tables, retained human annotations, explicit automated scores, 
+library comparisons, and model sensitivity information give users ways to understand how a result was reached. 
+ChatGPT and Codex have helped clean up installation procedures and generate analysis and plotting code, with 
+further agent driven workflows envisaged. The presentation reports gains in TALYS speed and memory economy, 
+alongside improved portability. These developments can accelerate the handling of large and diverse nuclear data 
+collections. Scientific oversight remains essential: specialists must frame the questions, check whether generated 
+outputs make physical sense, and decide how evidence should influence an evaluation. The resulting direction is a 
+connected nuclear data pipeline in which retrieval, quality assessment, model calculation, 
+and dissemination reinforce one another.
+
+
+\paragraph{Discussion}
+% Source: Webex-Summary/day2.pdf; use the meeting date, not the filename.
+Arjan Koning described an automated reaction-data pipeline combining experimental inputs, model calculations, optimisation and derived products. Versioned repositories and installation scripts were intended to make the workflow easier to reproduce. Discussion addressed dataset annotations, automated scoring and the treatment of outliers. Participants distinguished heuristic scores from documented reasons for accepting or excluding measurements, and considered fixed, testable routines as a way to make AI-assisted development reproducible. Large covariance products, model limitations and the distribution of generated data remained practical challenges.

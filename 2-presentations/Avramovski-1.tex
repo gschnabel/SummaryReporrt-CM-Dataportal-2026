@@ -1,0 +1,12 @@
+% Official contribution: https://conferences.iaea.org/event/498/contributions/43622/
+% Scheduled date: 2026-10-29.
+\paragraph{Abstract}
+% No substantive abstract published at the time of preparation.
+This joint presentation introduces two AI agents under development at the IAEA Nuclear Data Section. The first automates the processing and validation of nuclear structure and decay data in the ENSDF\cite{ENSDF_Manual} pipeline behind LiveChart\cite{livechart}, and expands data APIs for external users. The second is a fusion data agent that helps users find and query fusion-related data. Both use AI and ML methods and lay the groundwork for agentic software that can query and synthesize nuclear data on its own.
+\mbox{}\par
+
+\paragraph{Discussion}
+% Source: Webex-Summary/day3.pdf; meeting date 29 October 2026.
+% The supplied summary covers Dragan Avramovski's presentations but
+% incorrectly attributes them to Shin Okumura. Action assignments are unverified.
+Dragan Avramovski outlined proposed agent-assisted workflows for nuclear structure and decay data and for fusion data, building on existing processing scripts. Discussion focused on combining fixed processing steps with limited agent autonomy, verification and final human review. An orchestrator would coordinate extraction, validation and reporting, with executor and verifier roles and a record of changes. AI agents powered by LLMs can efficiently synthesize data and produce precise, tailored reports from large volumes of log data. Suggested HTML reports would let reviewers inspect differences between releases and trace values to their sources. Machine-learning anomaly scores would flag records for review. Participants also distinguished internal production workflows from public-facing data assistants, which raise additional questions about trust and provenance. These were design proposals, rather than a completed pipeline.

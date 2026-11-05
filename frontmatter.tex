@@ -1,0 +1,144 @@
+%%% First page - cover title
+
+{
+\pagestyle{empty}
+% Full-width cover boxes must not reserve a 30pt paragraph-end space.
+\setlength{\parfillskip}{0pt plus 1fil}
+% \thispagestyle{empty}
+\thispagestyle{firstpage}
+%%\newgeometry{top=2cm, bottom=2.5cm, left=2.5cm, right=2.5cm}
+
+\noindent\begin{minipage}{.6\textwidth}
+  \includegraphics[width=220pt]{figures/standart-Logo-E_horizontal_K.pdf}
+\end{minipage}%
+\begin{minipage}{.4\textwidth}
+  {\normalfont\sffamily\bfseries\flushright\fontsize{12pt}{0pt}\selectfont
+  \reportnumber \\
+  Distr. \reportdistribution \\}
+\end{minipage}
+
+{\normalfont\sffamily\bfseries\fontsize{20pt}{10pt}\selectfont
+  INDC International Nuclear Data Committee\\
+}
+
+\begin{center}
+  {\normalfont\sffamily\fontsize{16pt}{60pt}\selectfont
+    Summary Report of the \meetingtype\ on the\\
+  }
+
+  {\normalfont\sffamily\bfseries\fontsize{18pt}{36pt}\selectfont
+      \meetingsubject \\
+  }
+  {\normalfont\sffamily\fontsize{14pt}{24pt}\selectfont
+    \meetinglocation \\
+    \meetingdate \\
+  }
+%  \bigskip
+%  \bigskip
+%  \bigskip
+%  \bigskip
+   \vskip1.5\baselineskip
+    {\normalfont\sffamily\fontsize{20pt}{10pt}
+      \bigskip
+      \reportpreparer\par
+      \bigskip
+      \reportdate \\
+    }
+%   \vspace{6cm}
+    \vfill
+     {\normalfont\sffamily\fontsize{12pt}{20pt}\selectfont
+       \hrulefill \\
+       IAEA Nuclear Data Section\\
+       Vienna International Centre, P.O. Box 100, 1400 Vienna, Austria\\
+       \hrulefill
+     }
+\end{center}
+\newpage
+
+%%% Second page - INDC document reference
+
+\thispagestyle{empty}
+\noindent\begin{minipage}{1.0\textwidth}
+  \vspace{15cm}
+  \begin{center}
+    Selected INDC documents may be downloaded in electronic form from\\
+    \url{http://nds.iaea.org/publications}\\
+    or sent as an e-mail attachment.\\
+    Requests for hard copy or e-mail transmittal should be directed to\\
+    NDS.Contact-Point@iaea.org\\
+    or to:\\
+    Nuclear Data Section\\
+    International Atomic Energy Agency\\
+    Vienna International Centre\\
+    PO Box 100\\
+    1400 Vienna\\
+    Austria\\
+    \bigskip
+    \bigskip
+    Printed by the IAEA in Austria\\
+    \bigskip
+    \reportdate \\
+  \end{center}
+\end{minipage}
+\newpage
+
+%%% Third page - inside cover and abstract
+
+\thispagestyle{empty}
+\noindent\begin{minipage}{.6\textwidth}
+ ~ \\
+\end{minipage}%
+\begin{minipage}{.4\textwidth}
+  {\normalfont\sffamily\bfseries\flushright\fontsize{12pt}{0pt}\selectfont
+  \reportnumber \\
+  Distr. \reportdistribution\\}
+\end{minipage}
+
+\begin{center}
+  {\normalfont\sffamily\fontsize{14pt}{40pt}\selectfont
+    Summary Report of the \meetingtype\ on the\\
+  }
+
+  {\normalfont\sffamily\bfseries\fontsize{16pt}{36pt}\selectfont
+    \meetingsubject \\
+  }
+
+  {\normalfont\sffamily\fontsize{12pt}{24pt}\selectfont
+    \meetinglocation \\
+    \meetingdate \\
+  }
+\bigskip
+  {\normalfont\sffamily\fontsize{20pt}{10pt}
+    \bigskip
+    \medskip
+    \reportpreparer
+  }
+\end{center}
+%\vspace{6cm}
+\vfill
+\bigskip
+\begin{abstract}
+\input{1-introduction/abstract.tex}
+\end{abstract}
+\bigskip
+\begin{center}
+\reportdate
+\end{center}
+\newpage
+
+%%% Table of contents
+
+\thispagestyle{empty}
+\mbox{}\newpage
+
+\thispagestyle{empty}
+\begin{spacing}{1.5}
+\setlength{\emergencystretch}{2em}
+\addtocontents{toc}{\protect\thispagestyle{empty}}
+\tableofcontents
+\thispagestyle{empty}
+\end{spacing}
+\newpage
+}
+
+\restoregeometry

@@ -1,0 +1,14 @@
+% Official contribution: https://conferences.iaea.org/event/498/contributions/43623/
+% Scheduled date: 2026-10-29.
+\paragraph{Abstract}
+% No substantive abstract published at the time of preparation.
+Large language models do much more when they work through a task in steps instead of answering in one go. This lecture introduces agentic AI workflows and it covers the four main design patterns: reflection, tool use, planning and multi-agent collaboration. The examples show why the design of the workflow can matter more than the size of the model. The lecture also focuses on the practical side of building agents. The final part shows some aspects on ways of running local models.
+\mbox{}\par
+
+\paragraph{Discussion}
+% Source: Webex-Summary/day3.pdf; meeting date 29 October 2026.
+% Speaker names in the automatic summary are unreliable; no inferred
+% commitments, delivery dates or hardware benchmarks are adopted here.
+Dragan Avramovski discussed the design of agents, using deterministic checks, verification of intermediate outputs and reversible changes. Participants considered log summarisation and reports highlighting anomalies useful applications for human review. A versioned collection of human-approved examples was proposed for retrieval-augmented generation, allowing corrections to inform later tasks without retraining the model.
+
+Local deployment was discussed in terms of privacy, cost and reproducibility. Quantisation can reduce model memory requirements, while context length and processing speed constrain what existing hardware can support. Discussion also covered prompt injection and risks associated with tool access and communication between agents. Restricted permissions, isolated execution and escalation to a human reviewer were proposed safeguards. Model choice and resource requirements remained matters for testing against specific tasks.

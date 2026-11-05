@@ -1,0 +1,77 @@
+% Provisional synthesis of 27--28 October 2026 only.
+% Webex-Summary/day2.pdf = 27 October; day1.pdf = 28 October.
+
+The discussions concerned practical connections between data services, reuse of software and the interpretation of the data exposed to users. The following synthesis records topics and suggestions from those sessions. Final conclusions and follow-up actions remain open until the meeting is completed.
+
+\subsection{Shared components and developer collaboration}
+% Sources: 27 October, Schema/API, visualization continuity and Interoperability;
+% 28 October, Schema sharing and Back-end design. NEA slides corroborate principles.
+Participants compared independently developed retrieval systems and identified opportunities to share smaller components rather than entire applications. Examples included reaction-string interpretation, human-readable labels, uncertainty objects and schema modules. Common APIs and exchange structures could connect services with different internal implementations. NEA examples illustrated version-controlled contributions, automated validation and links between data releases and persistent identifiers.
+
+Discussion also concerned continuity of services and the effort required to maintain them. Practical exchanges between developers, clear documentation and user feedback were considered useful for sharing knowledge. The group discussed how contributors unfamiliar with Git could take part without needing to understand the full development infrastructure.
+
+\subsection{Structured metadata and experimental-data submission}
+% Source: 27 October, Template submission form pilot, Uncertainty representation,
+% Integration/automation/APIs and Metadata completeness.
+The EXFOR submission prototype combined a graphical form, JSON Schema validation and a review workflow. Participants discussed balancing ease of submission with the metadata needed to interpret measurements. Requirements included experimental conditions, standards, uncertainty sources and correlations, with modular sections for different measurements and support for existing tabular data.
+
+Form completion and schema validation do not by themselves complete compilation or scientific review. Authentication, storage, review responsibilities and integration into the compilation workflow remained questions for further development. DOI-based metadata lookup, clearer onboarding instructions and additional community testing were discussed as ways to reduce contributor effort.
+
+\subsection{Processing, provenance and scientific checks}
+% Sources: 27 October, Database exports/provenance and Processing;
+% 28 October, CM-to-lab, Conversion transparency and Master-file discrepancies.
+Discussion emphasized that comparisons between experimental results and evaluated libraries are reproducible only if the transformations applied to the data are documented along with the source data. Reconstruction, interpolation, units, frame conversions and bin definitions can all change a result. Participants asked for clearer descriptions of the processing behind plotted quantities and exports, including source versions and conversion-code versions, so that any displayed or downloaded result can be regenerated exactly. Downloaded data should also make it possible to understand why apparently equivalent results differ between services.
+
+
+Participants noted that when several versions of a source dataset are in use, it can be unclear which version a given result comes from. Differences in deleted, empty, duplicate or superseded records then lead to different results.
+A traceable provenance of data source is very important to give certainty and confidence in what the data mean and how they can be used. Because several sources of related data may exist, it is paramount that detailed provenance information is accurate and easily accessible by everyone. Provenance information should be provided in standardized and broadly adopted formats.
+
+\begin{itemize}
+  \item \textbf{Traceable provenance:} link every result to its specific source version and processing-code version.
+  \item \textbf{Version identification:} label each dataset release clearly so users can confirm which one they are using.
+  \item \textbf{Programmatic comparison:} compare sources automatically so discrepancies are flagged for review.
+  \item \textbf{Layered validation:} combine unit tests and schema validation with physical checks and comparison against reference data.
+  \item \textbf{Confidence indicators:} define and test automated indicators for displayed results.
+\end{itemize}
+
+% Differences between EXFOR source files and record counts raised questions about deleted, empty, duplicate and superseded records. These affect whether results can be reproduced across services and over time. Programmatic comparison of sources was suggested to reveal discrepancies for review. No common reconciliation rule was established. Unit tests and schema validation were distinguished from physical checks and comparison with reference data: the first two confirm that software behaves consistently, while only the latter two confirm that the results are physically correct. Automated confidence indicators for displayed results remained a proposal requiring definition and testing.
+
+
+\subsection{APIs, interfaces and access}
+% Sources: 27 October, Data Explorer and NEA retrieval demonstrations;
+% 28 October, API access/rate limits, Observables UI and Visualization scope.
+Demonstrations illustrated programmatic retrieval alongside interactive plots. Discussion addressed discovering available observables, choosing sensible defaults, retaining user controls and linking views back to original records. Selective queries and exports were useful for downstream analysis; bulk downloads raised storage and hosting questions.
+
+Participants discussed the effect of bot protection and rate limits on legitimate API use. API keys, caching and clearer access guidance were considered possible approaches. User-upload comparisons also prompted discussion of client-side processing and temporary storage. These options remained subject to implementation and institutional arrangements; an unrestricted submission or upload service was not established during the recorded sessions.
+
+\subsection{Schemas, curation and AI-assisted workflows}
+% Sources: 27 October, Autoscripts, Quality scoring and AI-assisted determinism;
+% 28 October, ENSDF/Genesis, Starrydata and Schema header/provenance linking.
+ENSDF discussions highlighted explicit representations of values, uncertainties, limits and ranges. Participants proposed including links to the applicable schema and its version in distributed records. Shared schema components and reusable computational functions could support multiple interfaces, while maintaining a distinction between data conversion and interpretation.
+
+The Autotalys and ENSDF presentations explored automation and AI assistance in different parts of the workflow. Discussion favored checking generated routines and retaining explanations and provenance for derived results. Statistical outliers need interpretation; they are not automatically erroneous measurements. Starrydata provided a complementary example of literature-data curation, where extraction tools and language-model assistance still require human checking. Numerical accuracy, source references and the effort needed to sustain curation were recurring concerns.
+
+\subsection{Continuities of modernization efforts}
+
+The continuity and continuous modernization of nuclear data functionalities included in legacy applications and HTML pages, and EXFOR/ENDF interfaces, is important. If a service is discontinued, releasing its source code under an open-source license, enables the community to preserve its functionality, maintain a local version, or develop a successor.
+
+
+
+\subsection{Persistent Identification and Versioning of Experimental Data}
+
+Two aspects of persistent identification are important for databases of scientific dataset.
+
+\noindent (1) \textit{Persistent identification of the data themselves.}
+Persistent identifiers (PIDs) are essential for the precise citation, traceability, and reproducible reuse of scientific data. Especially for the experimental data, identifying the original publication and identifying the data themselves serve distinct purposes: a publication DOI alone does not necessarily identify the specific dataset or version used in an analysis. Experimental databases therefore need identifiers that allow users to cite the data actually used.
+
+\noindent (2) \textit{Technically sound and coordinated implementation.}
+Assigning identifiers alone is insufficient. Effective implementation requires an appropriate granularity of identification, explicit versioning, informative metadata, and persistent resolution to the identified data. Users should be able to identify and access the version they cited, even after the database has been updated. A coherent policy across the institutions maintaining a database is therefore necessary to ensure consistent identification and versioning.
+
+EXFOR provides an important example of both points. Regarding (1), EXFOR does not yet provide complete DOI coverage for the original publications associated with its entries, as also noted in Section~\ref{Pres}. More fundamentally, precise citation of EXFOR data would require identifiers for individual datasets and their versions, whereas, at present, only the annual EXFOR Master file is assigned a DOI.
+
+Regarding (2), DOIs at the SUBENT level, with distinct identifiers for successive versions, would enable precise identification in a manner comparable to HEPData~\cite{HEPData}, for example \texttt{10.17182/hepdata.183386.v1/t3}. This approach has not yet gained sufficient recognition within the EXFOR community and its responsible agencies. The Data Bank is independently considering the use of Invenio to assign DOIs to new EXFOR entries from its area (area codes \texttt{2} and \texttt{O}). Such initiatives should be guided by a shared identification and versioning policy to ensure consistent and interoperable data citation across EXFOR.
+
+\subsection{Next meeting}
+The participants proposed regular follow-up meetings, with annual or biannual exchanges mentioned. The IAEA Nuclear Data Section currently plans to organize the Technical Meeting on Open Experimental and Theoretical Databases and Future Nuclear Data Dissemination Services in 22-26 November 2027.
+
+
